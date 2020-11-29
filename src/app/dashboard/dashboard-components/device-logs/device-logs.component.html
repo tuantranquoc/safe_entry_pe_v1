@@ -1,0 +1,33 @@
+<table border="1" class="table table-bordered" style="width: 100%">
+  <thead class=" table-bordered">
+  <tr style="background: #3CB371; color: #ECF0F1 ">
+    <th>
+      userId
+    </th>
+    <th>name</th>
+    <th>temperature</th>
+    <th>timestamp</th>
+    <th>deviceId</th>
+    <th>location</th>
+  </tr>
+  </thead>
+
+  <tr *ngFor="let item of data">
+    <td>
+      {{item.userId}}
+    </td>
+    <td>{{item.name}}</td>
+    <td>{{item.temperature}}</td>
+    <td>{{item.timestamp}}</td>
+    <td>{{item.deviceId}}</td>
+    <td>{{item.location}}</td>
+  </tr>
+</table>
+<nav aria-label="Page navigation example" style="position: absolute;
+  right: 20px" class="mr-3">
+  <ul class="pagination">
+    <li class="page-item pr-1" [(ngModel)]="pageIndex"><button (click)="getPreviousPage()" class="btn btn-primary">previous</button></li>
+    <li class="page-item" [(ngModel)]="pageIndex"><button (click)="getNextPage()" class="btn btn-primary">next</button></li>
+
+  </ul>
+</nav>
